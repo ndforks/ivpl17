@@ -316,16 +316,9 @@
             </div>
         </div>
 
-        <?php
-        foreach ($payment_method_types as $key => $type) {
-            $typeKey = "payment_method_type_". $key;
-            if (!isset($type['class'])) {
-                continue;
-            }
-        ?>
-        <div class="panel panel-default" id="panel-<?=$typeKey?>-settings">
+        <div class="panel panel-default" id="panel-qr-code-settings">
             <div class="panel-heading">
-                <?= _trans('payment_method_types_title') . " - " . $type['label']; ?>
+                <?php _trans('qr_code_settings'); ?>
             </div>
             <div class="panel-body">
 
@@ -334,53 +327,156 @@
                         <label>
                             <input
                                 type="hidden"
-                                name="settings[<?=$typeKey?>]"
+                                name="settings[qr_code]"
                                 value="0"
                             >
                             <input
                                 type="checkbox"
-                                name="settings[<?=$typeKey?>]"
-                                id="settings[<?=$typeKey?>]"
+                                name="settings[qr_code]"
+                                id="settings[qr_code]"
                                 value="1"
-                                <?php check_select(get_setting($typeKey), 1, '==', true) ?>
+                                <?php check_select(get_setting('qr_code'), 1, '==', true) ?>
                             >
-                            <?php _trans($typeKey . '_enable'); ?>
+                            <?php _trans('qr_code_settings_enable'); ?>
                         </label>
-                        <p class="help-block"><?php _trans($typeKey . '_enable_hint'); ?></p>
+                        <p class="help-block"><?php _trans('qr_code_settings_enable_hint'); ?></p>
                     </div>
                 </div>
-                <div class="row <?php echo !get_setting($typeKey) ? 'hidden' : ''; ?>">
-                    <?php foreach ($type['class']->getGeneralOptions() as $fieldK => $field) { $fieldKey = $typeKey . "_" . $fieldK ?>
+
+                <div class="row <?php echo !get_setting('qr_code') ? 'hidden' : ''; ?>">
                     <div class="col-xs-12 col-md-6">
                         <div class="form-group">
-                            <label for="settings[<?=$fieldKey?>]">
-                                <?=$field['label']?>
+                            <label for="settings[qr_code_recipient]">
+                                <?php _trans('qr_code_settings_recipient'); ?>
                             </label>
                             <input
-                                type="<?=$field['type']?>"
-                                name="settings[<?=$fieldKey?>]"
-                                id="settings[<?=$fieldKey?>]"
-                                class="form-control <?=isset($field['tags']) && $field['tags'] ? 'taggable' : ""?>"
-                                value="<?php echo get_setting($fieldKey, $field['default'] ?? ""); ?>"
-                                <?=$field['required'] ? "required" : ""?>
+                                type="text"
+                                name="settings[qr_code_recipient]"
+                                id="settings[qr_code_recipient]"
+                                class="form-control"
+                                value="<?php echo get_setting('qr_code_recipient'); ?>"
                             >
                         </div>
-                        <?php if (isset($field['tags']) && $field['tags']) { ?>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <label for="settings[qr_code_iban]">
+                                <?php _trans('qr_code_settings_iban'); ?>
+                            </label>
+                            <input
+                                type="text"
+                                name="settings[qr_code_iban]"
+                                id="settings[qr_code_iban]"
+                                class="form-control"
+                                value="<?php echo get_setting('qr_code_iban'); ?>"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row <?php echo !get_setting('qr_code') ? 'hidden' : ''; ?>">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <label for="settings[qr_code_bic]">
+                                <?php _trans('qr_code_settings_bic'); ?>
+                            </label>
+                            <input
+                                type="text"
+                                name="settings[qr_code_bic]"
+                                id="settings[qr_code_bic]"
+                                class="form-control"
+                                value="<?php echo get_setting('qr_code_bic'); ?>"
+                            >
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <label for="settings[qr_code_remittance_text]">
+                                <?php _trans('qr_code_settings_remittance_text'); ?>
+                            </label>
+                            <input
+                                type="text"
+                                name="settings[qr_code_remittance_text]"
+                                id="settings[qr_code_remittance_text]"
+                                class="form-control taggable"
+                                value="<?php echo get_setting('qr_code_remittance_text'); ?>"
+                                placeholder="{{{invoice_number}}}"
+                            >
+                        </div>
+
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <?php _trans($fieldKey . '_t'); ?>
+                                <?php _trans('qr_code_settings_remittance_text_tags'); ?>
                             </div>
                             <div class="panel-body">
                                 <?php $this->layout->load_view('email_templates/template-tags-invoices'); ?>
                             </div>
                         </div>
-                        <?php } ?>
                     </div>
-                    <?php } ?>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="panel panel-default" id="panel-qr-code-swiss-settings">
+            <div class="panel-heading">
+                <?php _trans('qr_code_swiss_settings'); ?>
+            </div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input
+                                type="hidden"
+                                name="settings[qr_code_swiss]"
+                                value="0"
+                            >
+                            <input
+                                type="checkbox"
+                                name="settings[qr_code_swiss]"
+                                id="settings[qr_code_swiss]"
+                                value="1"
+                                <?php check_select(get_setting('qr_code_swiss'), 1, '==', true) ?>
+                            >
+                            <?php _trans('qr_code_swiss_settings_enable'); ?>
+                        </label>
+                        <p class="help-block"><?php _trans('qr_code_swiss_settings_enable_hint'); ?></p>
+                    </div>
+                </div>
+                <div class="row <?php echo !get_setting('qr_code_swiss') ? 'hidden' : ''; ?>">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <label for="settings[qr_code_swiss_besrid]">
+                                <?php _trans('qr_code_swiss_settings_besrid'); ?>
+                            </label>
+                            <input
+                                type="text"
+                                name="settings[qr_code_swiss_besrid]"
+                                id="settings[qr_code_swiss_besrid]"
+                                class="form-control"
+                                value="<?php echo get_setting('qr_code_swiss_besrid'); ?>"
+                            >
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="form-group">
+                            <label for="settings[qr_code_swiss_currency]">
+                                <?php _trans('qr_code_swiss_settings_currency'); ?>
+                            </label>
+                            <input
+                                type="text"
+                                name="settings[qr_code_swiss_currency]"
+                                id="settings[qr_code_swiss_currency]"
+                                class="form-control"
+                                value="<?php echo get_setting('qr_code_swiss_currency', 'CHF', true); ?>"
+                            >
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <?php } ?>
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <?php _trans('email_settings'); ?>
@@ -553,21 +649,3 @@
 
     </div>
 </div>
-<script>
-    <?php foreach ($payment_method_types as $key => $type) { $typeKey = "payment_method_type_". $key; ?>
-    const checkbox<?=$typeKey?> = document.getElementById('settings[<?=$typeKey?>]');
-    const panel<?=$typeKey?>Settings = document.getElementById('panel-<?=$typeKey?>-settings');
-
-    if (checkbox<?=$typeKey?> && panel<?=$typeKey?>Settings) {
-        checkbox<?=$typeKey?>.addEventListener('click', () => {
-            panel<?=$typeKey?>Settings.querySelectorAll('.row').forEach((row) => {
-                if (checkbox<?=$typeKey?>.checked) {
-                    row.classList.remove('hidden');
-                } else {
-                    row.classList.add('hidden');
-                }
-            });
-        });
-    }
-    <?php } ?>
-</script>
