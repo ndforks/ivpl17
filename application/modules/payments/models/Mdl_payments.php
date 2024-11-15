@@ -70,11 +70,13 @@ class Mdl_Payments extends Response_Model
             ),
             'payment_method_id' => array(
                 'field' => 'payment_method_id',
-                'label' => trans('payment_method')
+                'label' => trans('payment_method'),
+                'rules' => 'trim',
             ),
             'payment_note' => array(
                 'field' => 'payment_note',
-                'label' => trans('note')
+                'label' => trans('note'),
+                'rules' => 'trim',
             )
         );
     }

@@ -72,7 +72,7 @@ class Mdl_Invoices_Recurring extends Response_Model
         return array(
             'invoice_id' => array(
                 'field' => 'invoice_id',
-                'rules' => 'required'
+                'rules' => 'required',
             ),
             'recur_start_date' => array(
                 'field' => 'recur_start_date',
@@ -81,7 +81,8 @@ class Mdl_Invoices_Recurring extends Response_Model
             ),
             'recur_end_date' => array(
                 'field' => 'recur_end_date',
-                'label' => trans('end_date')
+                'label' => trans('end_date'),
+                'rules' => 'trim',
             ),
             'recur_frequency' => array(
                 'field' => 'recur_frequency',

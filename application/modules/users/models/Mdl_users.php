@@ -79,57 +79,74 @@ class Mdl_Users extends Response_Model
                 'rules' => 'required'
             ),
             'user_company' => array(
-                'field' => 'user_company'
+                'field' => 'user_company',
+                'rules' => 'trim',
             ),
             'user_address_1' => array(
-                'field' => 'user_address_1'
+                'field' => 'user_address_1',
+                'rules' => 'trim',
             ),
             'user_address_2' => array(
-                'field' => 'user_address_2'
+                'field' => 'user_address_2',
+                'rules' => 'trim',
             ),
             'user_city' => array(
-                'field' => 'user_city'
+                'field' => 'user_city',
+                'rules' => 'trim',
             ),
             'user_state' => array(
-                'field' => 'user_state'
+                'field' => 'user_state',
+                'rules' => 'trim',
             ),
             'user_zip' => array(
-                'field' => 'user_zip'
+                'field' => 'user_zip',
+                'rules' => 'trim',
             ),
             'user_country' => array(
                 'field' => 'user_country',
                 'label' => trans('country'),
+                'rules' => 'trim',
             ),
             'user_phone' => array(
-                'field' => 'user_phone'
+                'field' => 'user_phone',
+                'rules' => 'trim',
             ),
             'user_fax' => array(
-                'field' => 'user_fax'
+                'field' => 'user_fax',
+                'rules' => 'trim',
             ),
             'user_mobile' => array(
-                'field' => 'user_mobile'
+                'field' => 'user_mobile',
+                'rules' => 'trim',
             ),
             'user_web' => array(
-                'field' => 'user_web'
+                'field' => 'user_web',
+                'rules' => 'trim',
             ),
             'user_vat_id' => array(
-                'field' => 'user_vat_id'
+                'field' => 'user_vat_id',
+                'rules' => 'trim',
             ),
             'user_tax_code' => array(
-                'field' => 'user_tax_code'
+                'field' => 'user_tax_code',
+                'rules' => 'trim',
             ),
             'user_subscribernumber' => array(
-                'field' => 'user_subscribernumber'
+                'field' => 'user_subscribernumber',
+                'rules' => 'trim',
             ),
             'user_iban' => array(
-                'field' => 'user_iban'
+                'field' => 'user_iban',
+                'rules' => 'trim',
             ),
             # SUMEX
             'user_gln' => array(
-                'field' => 'user_gln'
+                'field' => 'user_gln',
+                'rules' => 'trim',
             ),
             'user_rcc' => array(
-                'field' => 'user_rcc'
+                'field' => 'user_rcc',
+                'rules' => 'trim',
             )
         );
     }

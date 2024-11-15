@@ -65,7 +65,7 @@ class Mdl_Tasks extends Response_Model
             'task_description' => array(
                 'field' => 'task_description',
                 'label' => trans('task_description'),
-                'rules' => ''
+                'rules' => 'string'
             ),
             'task_price' => array(
                 'field' => 'task_price',
@@ -80,11 +80,12 @@ class Mdl_Tasks extends Response_Model
             'project_id' => array(
                 'field' => 'project_id',
                 'label' => trans('project'),
-                'rules' => ''
+                'rules' => 'numeric'
             ),
             'task_status' => array(
                 'field' => 'task_status',
-                'label' => lang('status')
+                'label' => lang('status'),
+                'rules' => 'trim',
             ),
             'tax_rate_id' => array(
                 'field' => 'tax_rate_id',

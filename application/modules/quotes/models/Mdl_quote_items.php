@@ -65,22 +65,27 @@ class Mdl_Quote_Items extends Response_Model
             'item_description' => [
                 'field' => 'item_description',
                 'label' => trans('description'),
+                'rules' => 'trim',
             ],
             'item_quantity' => [
                 'field' => 'item_quantity',
                 'label' => trans('quantity'),
+                'rules' => 'trim',
             ],
             'item_price' => [
                 'field' => 'item_price',
                 'label' => trans('price'),
+                'rules' => 'trim',
             ],
             'item_tax_rate_id' => [
                 'field' => 'item_tax_rate_id',
                 'label' => trans('item_tax_rate'),
+                'rules' => 'trim',
             ],
             'item_product_id' => [
                 'field' => 'item_product_id',
                 'label' => trans('original_product'),
+                'rules' => 'trim',
             ],
         ];
     }

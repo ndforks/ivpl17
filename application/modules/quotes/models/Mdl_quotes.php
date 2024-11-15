@@ -112,7 +112,8 @@ class Mdl_Quotes extends Response_Model
             ],
             'quote_password' => [
                 'field' => 'quote_password',
-                'label' => trans('quote_password')
+                'label' => trans('quote_password'),
+                'rules' => 'trim',
             ],
             'user_id' => [
                 'field' => 'user_id',

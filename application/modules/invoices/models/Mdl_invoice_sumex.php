@@ -53,11 +53,13 @@ class Mdl_invoice_sumex extends Response_Model
             ),
             'sumex_diagnosis' => array(
                 'field' => 'sumex_diagnosis',
-                'label' => trans('diagnosis')
+                'label' => trans('diagnosis'),
+                'rules' => 'trim',
             ),
             'sumex_observations' => array(
                 'field' => 'sumex_observations',
-                'label' => trans('sumex_observations')
+                'label' => trans('sumex_observations'),
+                'rules' => 'trim',
             ),
             'sumex_treatmentstart' => array(
                 'field' => 'sumex_treatmentstart',
@@ -76,7 +78,8 @@ class Mdl_invoice_sumex extends Response_Model
             ),
             'sumex_casenumber' => array(
                 'field' => 'sumex_casenumber',
-                'label' => trans('case_number')
+                'label' => trans('case_number'),
+                'rules' => 'trim',
             )
         );
     }

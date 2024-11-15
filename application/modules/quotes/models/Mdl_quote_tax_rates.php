@@ -73,5 +73,4 @@ class Mdl_Quote_Tax_Rates extends Response_Model
             )
         );
     }
-
 }

@@ -42,11 +42,13 @@ class Mdl_Email_Templates extends Response_Model
             ),
             'email_template_type' => array(
                 'field' => 'email_template_pdf_quote_template',
-                'label' => trans('type')
+                'label' => trans('type'),
+                'rules' => 'trim',
             ),
             'email_template_subject' => array(
                 'field' => 'email_template_subject',
-                'label' => trans('subject')
+                'label' => trans('subject'),
+                'rules' => 'trim',
             ),
             'email_template_from_name' => array(
                 'field' => 'email_template_from_name',
@@ -55,23 +57,28 @@ class Mdl_Email_Templates extends Response_Model
             ),
             'email_template_from_email' => array(
                 'field' => 'email_template_from_email',
-                'label' => trans('from_email')
+                'label' => trans('from_email'),
+                'rules' => 'trim'
             ),
             'email_template_cc' => array(
                 'field' => 'email_template_cc',
-                'label' => trans('cc')
+                'label' => trans('cc'),
+                'rules' => 'trim',
             ),
             'email_template_bcc' => array(
                 'field' => 'email_template_bcc',
-                'label' => trans('bcc')
+                'label' => trans('bcc'),
+                'rules' => 'trim',
             ),
             'email_template_pdf_template' => array(
                 'field' => 'email_template_pdf_template',
-                'label' => trans('default_pdf_template')
+                'label' => trans('default_pdf_template'),
+                'rules' => 'trim',
             ),
             'email_template_body' => array(
                 'field' => 'email_template_body',
-                'label' => trans('body')
+                'label' => trans('body'),
+                'rules' => 'trim',
             )
         );
     }

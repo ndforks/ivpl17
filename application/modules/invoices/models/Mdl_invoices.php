@@ -114,6 +114,7 @@ class Mdl_Invoices extends Response_Model
             'invoice_password' => [
                 'field' => 'invoice_password',
                 'label' => trans('invoice_password'),
+                'rules' => 'trim',
             ],
             'user_id' => [
                 'field' => 'user_id',

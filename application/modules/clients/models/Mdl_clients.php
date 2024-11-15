@@ -40,6 +40,7 @@ class Mdl_Clients extends Response_Model
             'client_title' => [
                 'field' => 'client_title',
                 'label' => trans('client_title'),
+                'rules' => 'string',
             ],
             'client_name' => [
                 'field' => 'client_name',
@@ -49,9 +50,11 @@ class Mdl_Clients extends Response_Model
             'client_surname' => [
                 'field' => 'client_surname',
                 'label' => trans('client_surname'),
+                'rules' => 'string',
             ],
             'client_active' => [
                 'field' => 'client_active',
+                'rules' => 'boolean',
             ],
             'client_language' => [
                 'field' => 'client_language',
@@ -60,18 +63,23 @@ class Mdl_Clients extends Response_Model
             ],
             'client_address_1' => [
                 'field' => 'client_address_1',
+                'rules' => 'trim',
             ],
             'client_address_2' => [
                 'field' => 'client_address_2',
+                'rules' => 'trim',
             ],
             'client_city' => [
                 'field' => 'client_city',
+                'rules' => 'trim',
             ],
             'client_state' => [
                 'field' => 'client_state',
+                'rules' => 'trim',
             ],
             'client_zip' => [
                 'field' => 'client_zip',
+                'rules' => 'trim',
             ],
             'client_country' => [
                 'field' => 'client_country',
@@ -79,24 +87,31 @@ class Mdl_Clients extends Response_Model
             ],
             'client_phone' => [
                 'field' => 'client_phone',
+                'rules' => 'trim',
             ],
             'client_fax' => [
                 'field' => 'client_fax',
+                'rules' => 'trim',
             ],
             'client_mobile' => [
                 'field' => 'client_mobile',
+                'rules' => 'trim',
             ],
             'client_email' => [
                 'field' => 'client_email',
+                'rules' => 'trim',
             ],
             'client_web' => [
                 'field' => 'client_web',
+                'rules' => 'trim',
             ],
             'client_vat_id' => [
                 'field' => 'client_vat_id',
+                'rules' => 'trim',
             ],
             'client_tax_code' => [
                 'field' => 'client_tax_code',
+                'rules' => 'trim',
             ],
             // SUMEX
             'client_birthdate' => [
@@ -105,6 +120,7 @@ class Mdl_Clients extends Response_Model
             ],
             'client_gender' => [
                 'field' => 'client_gender',
+                'rules' => 'trim',
             ],
             'client_avs' => [
                 'field' => 'client_avs',
@@ -114,10 +130,12 @@ class Mdl_Clients extends Response_Model
             'client_insurednumber' => [
                 'field' => 'client_insurednumber',
                 'label' => trans('sumex_insurednumber'),
+                'rules' => 'trim',
             ],
             'client_veka' => [
                 'field' => 'client_veka',
                 'label' => trans('sumex_veka'),
+                'rules' => 'trim',
             ],
         ];
     }
